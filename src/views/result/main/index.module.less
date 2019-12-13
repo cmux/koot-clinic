@@ -1,0 +1,166 @@
+@import '~vars.less';
+@import '../_.less';
+
+.component {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+}
+
+// ============================================================================
+
+.component-header {
+    @title-font-size: 30px;
+    // @top: (@aside-icon-size + @gutter - @title-font-size - @gutter + 10px);
+    @top: (@gutter * 3);
+    padding-top: @top;
+    // overflow: hidden;
+    position: relative;
+    position: sticky;
+    top: (0 - @top - @gutter - @title-font-size);
+    background: var(--root-background-color);
+    z-index: 100;
+    border-bottom: 1px solid var(--root-border-color);
+    flex: 0;
+    // backdrop-filter: @base-backdrop-filter;
+    // @supports (backdrop-filter: @base-backdrop-filter) {
+    //     background: fade(@color-background, 50%);
+    // }
+    // .styles-dark-theme() {
+    //     background: @dark-theme-color-background;
+    //     @supports (backdrop-filter: @base-backdrop-filter) {
+    //         background: fade(@dark-theme-color-background, 50%);
+    //     }
+    // }
+    // .dark-theme(.styles-dark-theme());
+    .title {
+        padding: 0 @gutter;
+        font-size: @title-font-size;
+        line-height: 1;
+        margin: 0;
+    }
+    .tabs {
+        position: relative;
+        margin-top: @gutter;
+        margin-bottom: -1px;
+        overflow: hidden;
+        width: 100%;
+        height: @tab-height;
+        & > .wrapper {
+            overflow: hidden;
+            overflow-x: scroll;
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+            padding: 0 (@gutter / 2) 0 (@gutter / 2);
+        }
+        .tab {
+            position: relative;
+            display: block;
+            text-align: center;
+            padding: 0 (@gutter / 2);
+            height: @tab-height;
+            line-height: @tab-height;
+            color: var(--root-content-color-lighter);
+            white-space: nowrap;
+            .count {
+                position: relative;
+                font-size: 12px;
+                line-height: 1em;
+                display: inline-block;
+                padding: 2px 4px;
+                background: var(--root-content-color-lighter);
+                color: var(--root-background-color-lighter);
+                border-radius: 3px;
+                margin-left: 5px;
+                font-weight: bolder;
+                .transition(~'background-color,opacity');
+                // top: -4px;
+                &.is-zero {
+                    opacity: 0.5;
+                }
+                &.is-not-zero {
+                    opacity: 0.65;
+                    background: var(--root-error-color);
+                }
+            }
+            &:last-child {
+                border-right: @gutter solid transparent;
+                .styles-phone() {
+                    border-right: @gutter solid transparent;
+                }
+                .screen-phone(.styles-phone());
+            }
+            .styles-hover() {
+                color: var(--root-accent-color-hover);
+                .count {
+                    &.is-not-zero {
+                        opacity: 1;
+                    }
+                }
+            }
+            .styles-active() {
+                color: var(--root-accent-color-active);
+                .count {
+                    &.is-not-zero {
+                        opacity: 0.35;
+                    }
+                }
+            }
+            .is-hover(.styles-hover() ; .styles-active() ;);
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 10px;
+                right: 10px;
+                z-index: -1;
+                border: 8px solid var(--root-accent-color);
+                border-bottom: 0;
+                border-radius: 100px;
+                transform: translateY(100%);
+                .transition(transform);
+            }
+            &.is-active {
+                color: var(--root-text-main-color);
+                cursor: default;
+                .count {
+                    background: var(--root-error-color);
+                    &.is-zero {
+                        background: var(--root-content-color-lighter);
+                    }
+                    &.is-not-zero {
+                        opacity: 1;
+                    }
+                }
+                .styles-hover() {
+                    color: var(--root-text-main-color);
+                }
+                .styles-active() {
+                    .styles-hover();
+                }
+                .is-hover(.styles-hover() ; .styles-active() ;);
+                &::after {
+                    transform: none;
+                }
+            }
+        }
+    }
+    &.mod-history {
+        top: (0 - @top + @gutter);
+        .title {
+            padding-bottom: @gutter;
+        }
+    }
+}
+
+// ============================================================================
+
+.component-body {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    background: var(--root-background-color-lighter);
+}

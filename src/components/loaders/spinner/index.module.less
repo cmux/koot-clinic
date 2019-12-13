@@ -1,0 +1,44 @@
+@import '~vars.less';
+
+.component {
+    @size: 64px;
+
+    display: inline-block;
+    width: @size;
+    height: @size;
+    vertical-align: middle;
+    position: relative;
+    animation-duration: 1s;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+    }
+
+    &::before {
+        border-top: 4px solid @color-accent;
+        z-index: 2;
+        animation: inherit;
+        animation-name: spinning;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        @keyframes spinning {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    &::after {
+        border: 2px solid @theme-bluegrey-100;
+    }
+}

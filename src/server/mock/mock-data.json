@@ -1,0 +1,99 @@
+{
+    "url": "https://www.ratingtoken.net/",
+    "errors": {
+        "broken request": [
+            {
+                "message": "request `https://icorating.com/cache/images/people/e2ccpkpYuTXApk6jn6OhKmAAMD0BE1rC92dchv3O-50x50.jpeg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/e2ccpkpYuTXApk6jn6OhKmAAMD0BE1rC92dchv3O-50x50.jpeg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/LTS-1?from=upcoming&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/VI9MxoVq2EPvyugsl3Rzu4dE9fCHt4I24FXyBglt-50x50.png` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/VI9MxoVq2EPvyugsl3Rzu4dE9fCHt4I24FXyBglt-50x50.png",
+                "pageUrl": "https://www.ratingtoken.net/ratings/LTS-1?from=upcoming&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/lindaxie_657-50x50.jpg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/lindaxie_657-50x50.jpg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/ZRX-1?from=list&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/fredehrsam_654-50x50.jpg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/fredehrsam_654-50x50.jpg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/ZRX-1?from=list&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/50x50/pedro-jord%C3%A3o-b783689_17458.jpg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/50x50/pedro-jord%C3%A3o-b783689_17458.jpg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/BITS-4?from=search_industry&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/50x50/rushd-averro%C3%ABs_6841.jpg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/50x50/rushd-averro%C3%ABs_6841.jpg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/BAX-1?from=search_industry&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/R36G4Bx1xaMW4i5HxRpPwoqrsrZwQNs09cLh0HqP-50x50.jpeg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/R36G4Bx1xaMW4i5HxRpPwoqrsrZwQNs09cLh0HqP-50x50.jpeg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/INXT-1?from=search_industry&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/nVImNezFtPvFun5TlaJ2P5yYiIXVExdXJ5DafMcI-50x50.jpeg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/nVImNezFtPvFun5TlaJ2P5yYiIXVExdXJ5DafMcI-50x50.jpeg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/INXT-1?from=search_industry&hl=en"
+            },
+            {
+                "message": "request `https://icorating.com/cache/images/people/50x50/jayadsagar_1915.jpeg` broken (404 )",
+                "type": "broken request",
+                "url": "https://icorating.com/cache/images/people/50x50/jayadsagar_1915.jpeg",
+                "pageUrl": "https://www.ratingtoken.net/ratings/CAPP?from=search_industry&hl=ru"
+            },
+            {
+                "message": "request `https://hm.baidu.com/hm.gif?cc=1&ck=1&cl=24-bit&ds=800x600&vl=600&et=0&ja=0&ln=en-us&lo=0&rnd=549761421&si=dedd550263c9047fade80a0da3b53836&v=1.2.63&lv=1&sn=35810&ct=!!&tt=%E6%98%A8%E6%97%A5EOS%C2%A0Dapp%E4%BA%A4%E6%98%93%E7%AC%94%E6%95%B0%E8%BE%BE%E5%88%B0%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%80%E4%BD%8E%E5%80%BC%20RatingToken_News` broken (500 Internal Server Error)",
+                "type": "broken request",
+                "url": "https://hm.baidu.com/hm.gif?cc=1&ck=1&cl=24-bit&ds=800x600&vl=600&et=0&ja=0&ln=en-us&lo=0&rnd=549761421&si=dedd550263c9047fade80a0da3b53836&v=1.2.63&lv=1&sn=35810&ct=!!&tt=%E6%98%A8%E6%97%A5EOS%C2%A0Dapp%E4%BA%A4%E6%98%93%E7%AC%94%E6%95%B0%E8%BE%BE%E5%88%B0%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%80%E4%BD%8E%E5%80%BC%20RatingToken_News",
+                "pageUrl": "https://www.ratingtoken.net/news/1c5503d0a48511e987197dd7c45ba905?hl=en"
+            },
+            {
+                "message": "request `https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0` broken (404 Not Found)",
+                "type": "broken request",
+                "url": "https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0"
+            }
+        ],
+        "console error": [
+            {
+                "message": "Failed to load resource: the server responded with a status of 404 ()",
+                "type": "console error",
+                "url": "https://www.ratingtoken.net/ratings/LTS-1?from=upcoming&hl=en",
+                "location": {
+                    "url": "https://icorating.com/cache/images/people/e2ccpkpYuTXApk6jn6OhKmAAMD0BE1rC92dchv3O-50x50.jpeg"
+                }
+            },
+            {
+                "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+                "type": "console error",
+                "url": "https://www.ratingtoken.net/news/1c5503d0a48511e987197dd7c45ba905?hl=en",
+                "location": {
+                    "url": "https://hm.baidu.com/hm.gif?cc=1&ck=1&cl=24-bit&ds=800x600&vl=600&et=0&ja=0&ln=en-us&lo=0&rnd=549761421&si=dedd550263c9047fade80a0da3b53836&v=1.2.63&lv=1&sn=35810&ct=!!&tt=%E6%98%A8%E6%97%A5EOS%C2%A0Dapp%E4%BA%A4%E6%98%93%E7%AC%94%E6%95%B0%E8%BE%BE%E5%88%B0%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%80%E4%BD%8E%E5%80%BC%20RatingToken_News"
+                }
+            },
+            {
+                "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+                "type": "console error",
+                "url": "https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0",
+                "location": {
+                    "url": "https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0https://www.ratingtoken.net/news/72d79650f6f211e88fa61114240433c0"
+                }
+            }
+        ]
+    },
+    "emails": ["diablohudream@gmail.com"]
+}

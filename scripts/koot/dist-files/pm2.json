@@ -1,0 +1,28 @@
+{
+    "apps": [
+        {
+            "name": "koot-clinic-client",
+            "script": "./dist-ssr-server/index.js",
+            "exec_mode": "fork",
+            "max_memory_restart": "1000M",
+            "min_uptime": "30s",
+            "max_restarts": "5",
+            "error_file": "./logs/err.log",
+            "out_file": "./logs/out.log",
+            "merge_logs": true,
+            "log_date_format": "YYYY-MM-DD HH:mm Z"
+        },
+        {
+            "name": "koot-clinic-api",
+            "script": "./dist-api-server/run.js",
+            "exec_mode": "fork",
+            "max_memory_restart": "1000M",
+            "min_uptime": "30s",
+            "max_restarts": "5",
+            "error_file": "./logs/err.log",
+            "out_file": "./logs/out.log",
+            "merge_logs": true,
+            "log_date_format": "YYYY-MM-DD HH:mm Z"
+        }
+    ]
+}

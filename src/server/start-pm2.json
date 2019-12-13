@@ -1,0 +1,11 @@
+{
+    "apps": {
+        "name": "koot-clinic-server",
+        "script": "./index.js",
+        "exec_mode": "cluster",
+        "instances": 1,
+        "max_memory_restart": "1000M",
+        "min_uptime": "30s",
+        "max_restarts": "5"
+    }
+}

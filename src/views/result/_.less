@@ -1,0 +1,17 @@
+@gutter: 30px;
+@aside-width: 255px;
+@aside-width-tablet: unit(
+    (@aside-width / @screen-tablet-landscape-max) * 100,
+    vw
+);
+@aside-icon-size: 150px;
+@tab-height: 50px;
+
+.info-text() {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    color: var(--root-content-color-lighter);
+    opacity: 0.5;
+    pointer-events: none;
+}

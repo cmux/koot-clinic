@@ -1,0 +1,229 @@
+@import (less) '~normalize.css/normalize.css';
+@import '~vars.less';
+
+// extra resets ---------------------------------------------------------------
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    text-decoration-skip-ink: auto;
+    transition-property: none;
+    transition-duration: inherit;
+    transition-timing-function: @base-transition-timing-function;
+}
+
+button,
+input,
+optgroup,
+option,
+select,
+textarea {
+    font-family: inherit;
+}
+
+a,
+button {
+    .styles-active() {
+        transition-duration: (@base-transition-duration * 1/4);
+        outline: 0;
+    }
+    .is-active(.styles-active() ;);
+}
+
+// global styles --------------------------------------------------------------
+
+:root {
+    --root-content-color: @color-base;
+    --root-content-color-lighter: @color-base-lighter;
+    --root-background-color: @color-background;
+    --root-background-color-lighter: @color-background-lighter;
+    --root-background-color-deeper: @color-background-deeper;
+    --root-text-main-color: @color-text-main;
+    --root-accent-color: @color-accent;
+    --root-accent-color-hover: @color-accent-hover;
+    --root-accent-color-active: @color-accent-active;
+    --root-border-color: @color-border;
+    --root-error-color: @theme-red-a400;
+    --root-grade-good-color: @color-grade-good;
+    --root-grade-good-color-deeper: @color-grade-good-deeper;
+    --root-grade-average-color: @color-grade-average;
+    --root-grade-average-color-deeper: @color-grade-average-deeper;
+    --root-grade-bad-color: @color-grade-bad;
+    --root-grade-bad-color-deeper: @color-grade-bad-deeper;
+    .styles-dark-theme() {
+        --root-content-color: @dark-theme-color-base;
+        --root-content-color-lighter: @dark-theme-color-base-lighter;
+        --root-background-color-lighter: @dark-theme-color-background-lighter;
+        --root-background-color-deeper: @dark-theme-color-background-deeper;
+        --root-background-color: @dark-theme-color-background;
+        --root-text-main-color: @dark-theme-color-text-main;
+        --root-accent-color: @dark-theme-color-accent;
+        --root-accent-color-hover: @dark-theme-color-accent-hover;
+        --root-accent-color-active: @dark-theme-color-accent-active;
+        --root-border-color: @dark-theme-color-border;
+        --root-error-color: @theme-red-a200;
+        --root-grade-good-color: @dark-theme-color-grade-good;
+        --root-grade-good-color-deeper: @dark-theme-color-grade-good-deeper;
+        --root-grade-average-color: @dark-theme-color-grade-average;
+        --root-grade-average-color-deeper: @dark-theme-color-grade-average-deeper;
+        --root-grade-bad-color: @dark-theme-color-grade-bad;
+        --root-grade-bad-color-deeper: @dark-theme-color-grade-bad-deeper;
+    }
+    .dark-theme(.styles-dark-theme());
+}
+html,
+body {
+    height: 100%;
+}
+html {
+    box-sizing: border-box;
+    font-family: Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light',
+        'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Lucida Grande',
+        'Liberation Sans', 'Microsoft YaHei UI', 'Microsoft YaHei',
+        'Hiragino Sans GB', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei',
+        'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif, caption;
+    font-size: @root-font-size;
+    color: @color-base;
+    color: var(--root-content-color);
+    background: @color-background;
+    background: var(--root-background-color);
+    transition-duration: @base-transition-duration;
+}
+body {
+    font-size: @base-font-size;
+    line-height: 1.5em;
+}
+
+:first-child {
+    margin-top: 0;
+}
+:last-child {
+    margin-bottom: 0;
+}
+
+[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+a {
+    color: @color-accent;
+    color: var(--root-accent-color);
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-underline-position: under;
+    .transition(~'color, opacity');
+    .styles-hover() {
+        color: @color-accent-hover;
+        color: var(--root-accent-color-hover);
+    }
+    .styles-active() {
+        color: @color-accent-active;
+        color: var(--root-accent-color-active);
+    }
+    .is-hover(.styles-hover() ; .styles-active() ;);
+
+    &.color-inherit {
+        .link-color-inherit();
+    }
+
+    &.color-lighter {
+        color: @color-base-lighter;
+        color: var(--root-content-color-lighter);
+        .styles-hover() {
+            color: @color-base;
+            color: var(--root-content-color);
+        }
+        .styles-active() {
+            // color: @color-border;
+            // color: var(--root-border-color);
+            .styles-hover();
+            opacity: 0.5;
+        }
+        .is-hover(.styles-hover() ; .styles-active() ;);
+    }
+}
+
+//
+
+#__result-loader {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    min-height: 400px;
+    height: 100vh;
+    font-size: @base-font-size;
+    overflow-x: hidden;
+    user-select: none;
+    .background-pattern();
+    .transition(opacity);
+
+    .icons {
+        @size: 96px;
+        @padding: 10px;
+        @border-width: 4px;
+        @size-full: (@size + @padding * 2 + @border-width * 2);
+        display: block;
+        width: @size-full;
+        height: @size-full;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: (0 - @size-full / 2) 0 0 (0 - @size-full / 2);
+        border: @border-width solid currentColor;
+        border-radius: 10px;
+        overflow: hidden;
+        .icon {
+            display: block;
+            width: @size;
+            height: @size;
+            margin: @padding;
+            svg {
+                width: @size;
+                height: @size;
+                fill: currentColor;
+            }
+        }
+        & > .wrapper {
+            animation: result-loader 3s infinite linear;
+            @animation-size: (@size + @padding);
+            @keyframes result-loader {
+                0% {
+                    transform: translateY(0);
+                }
+                15% {
+                    transform: translateY(0);
+                }
+
+                25% {
+                    transform: translateY((0 - @animation-size));
+                }
+                52.5% {
+                    transform: translateY((0 - @animation-size));
+                }
+
+                62.5% {
+                    transform: translateY((0 - @animation-size * 2));
+                }
+                90% {
+                    transform: translateY((0 - @animation-size * 2));
+                }
+
+                100% {
+                    transform: translateY((0 - @animation-size * 3));
+                }
+                // 100% {
+                //     transform: translateY((0 - @animation-size * 3));
+                // }
+            }
+        }
+    }
+
+    &.die {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
