@@ -29,11 +29,14 @@ const Aside = extend<ComponentProps>({
     React.memo(
         ({ className, history, resultId }): JSX.Element => {
             const { domain, nextScheduledTimestamp, results = [] } = history;
-            const latestResultId = results.sort(
-                (a, b) =>
-                    new Date(b.clinic.createTime).valueOf() -
-                    new Date(a.clinic.createTime).valueOf()
-            )[0].clinic.everyQueryKey;
+            const latestResultId =
+                Array.isArray(results) && results.length
+                    ? results.sort(
+                          (a, b) =>
+                              new Date(b.clinic.createTime).valueOf() -
+                              new Date(a.clinic.createTime).valueOf()
+                      )[0].clinic.everyQueryKey
+                    : undefined;
             return (
                 <React.Fragment>
                     <PhoneViewController />

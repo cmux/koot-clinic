@@ -28,9 +28,9 @@ export default {
             if (typeof state[id] === 'object')
                 return new Promise(resolve => resolve(state[id]));
 
-            return getResult(id).then(result =>
-                commit(reducerUpdateById, { result, id })
-            );
+            return getResult(id)
+                .then(result => commit(reducerUpdateById, { result, id }))
+                .then(r => r.payload.result);
         }
     },
     modules: {}
