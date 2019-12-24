@@ -1,37 +1,37 @@
 {
     ".zh": {
-        ".public": "public/koot-1577174854262/",
+        ".public": "public/koot-1577185493674/",
         ".entrypoints": {
             "commons": [
-                "public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js",
-                "public/koot-1577174854262/includes/entry.ef0af55962bd213c6cf1.js"
+                "public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js",
+                "public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js"
             ],
             "critical": [
-                "public/koot-1577174854262/includes/extract.5.90419169072f558e10f3.css",
-                "public/koot-1577174854262/includes/entry.90419169072f558e10f3.js"
+                "public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css",
+                "public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js"
             ],
             "client": [
-                "public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js",
-                "public/koot-1577174854262/includes/entry.56ba8badc99c27fb0551.js"
+                "public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js",
+                "public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js"
             ],
             "__KOOT__CLIENT__RUN__FIRST__": [
-                "public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js",
-                "public/koot-1577174854262/includes/entry.79addfbd70cc0043ecf2.js"
+                "public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js",
+                "public/koot-1577185493674/includes/entry.56b255076d99b8101781.js"
             ]
         },
         ".files": {
-            "koot-clinic.js": "public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js",
-            "PageResult.js": "public/koot-1577174854262/includes/chunk.d7b19b36cfafc6c2a453.js",
-            "__KOOT__CLIENT__RUN__FIRST__.js": "public/koot-1577174854262/includes/entry.79addfbd70cc0043ecf2.js",
-            "client.js": "public/koot-1577174854262/includes/entry.56ba8badc99c27fb0551.js",
-            "commons.js": "public/koot-1577174854262/includes/entry.ef0af55962bd213c6cf1.js",
-            "critical.css": "public/koot-1577174854262/includes/extract.5.90419169072f558e10f3.css",
-            "critical.js": "public/koot-1577174854262/includes/entry.90419169072f558e10f3.js",
-            "vendors~PageResult.js": "public/koot-1577174854262/includes/chunk.6aa0e83178e8bdd133ce.js",
-            "__KOOT__EXTRACT__CSS__.css": "public/koot-1577174854262/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css"
+            "koot-clinic.js": "public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js",
+            "PageResult.js": "public/koot-1577185493674/includes/chunk.7866a40a63132c803250.js",
+            "__KOOT__CLIENT__RUN__FIRST__.js": "public/koot-1577185493674/includes/entry.56b255076d99b8101781.js",
+            "client.js": "public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js",
+            "commons.js": "public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js",
+            "critical.css": "public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css",
+            "critical.js": "public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js",
+            "vendors~PageResult.js": "public/koot-1577185493674/includes/chunk.8c0f7e7742819a6d8074.js",
+            "__KOOT__EXTRACT__CSS__.css": "public/koot-1577185493674/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css"
         },
         "service-worker": [
-            "public/koot-1577174854262/service-worker.zh.js"
+            "public/koot-1577185493674/service-worker.zh.js"
         ]
     }
 }

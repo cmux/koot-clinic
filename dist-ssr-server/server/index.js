@@ -86,9 +86,9 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./logs/tmp/config/portion.server.1577174853012.js":
+/***/ "./logs/tmp/config/portion.server.1577185493652.js":
 /*!*********************************************************!*\
-  !*** ./logs/tmp/config/portion.server.1577174853012.js ***!
+  !*** ./logs/tmp/config/portion.server.1577185493652.js ***!
   \*********************************************************/
 /*! exports provided: template, server */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2537,7 +2537,6 @@ var extendCacheObject = function extendCacheObject(cache, chunkmap, localeId) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_get_dist_path__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../utils/get-dist-path */ "./node_modules/koot/utils/get-dist-path.js");
 /* harmony import */ var _utils_get_dist_path__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utils_get_dist_path__WEBPACK_IMPORTED_MODULE_0__);
-/* eslint-disable no-unused-vars */
 
 
 var fs = __webpack_require__(/*! fs-extra */ "fs-extra");
@@ -2584,7 +2583,7 @@ var ssr = async function ssr(__KOOT_SSR__) {
     // await eval(__KOOT_SSR_FILE_CONTENT__)
 
 
-    var Store, History, __KOOT_STORE__, __KOOT_HISTORY__, __KOOT_CTX__;
+    var Store, History, __KOOT_STORE__, __KOOT_HISTORY__;
 
     var __KOOT_LOCALEID__ = __KOOT_SSR__.LocaleId;
 
@@ -2598,12 +2597,7 @@ var ssr = async function ssr(__KOOT_SSR__) {
       __KOOT_HISTORY__ = value;
     };
 
-    var __KOOT_SSR_SET_CTX__ = function __KOOT_SSR_SET_CTX__(value) {
-      __KOOT_CTX__ = value;
-    };
-
     try {
-      // eslint-disable-next-line no-eval
       eval(__KOOT_SSR_FILE_CONTENT__);
     } catch (err) {
       resolve({
@@ -2904,7 +2898,7 @@ module.exports = KootReactRenderCache;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! __KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME__ */ "./logs/tmp/config/portion.server.1577174853012.js");
+/* harmony import */ var _KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! __KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME__ */ "./logs/tmp/config/portion.server.1577185493652.js");
 /* harmony import */ var _utils_get_pathname_dev_server_start__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/get-pathname-dev-server-start */ "./node_modules/koot/utils/get-pathname-dev-server-start.js");
 /* harmony import */ var _utils_get_pathname_dev_server_start__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_utils_get_pathname_dev_server_start__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _libs_create_koa_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../libs/create-koa-app */ "./node_modules/koot/libs/create-koa-app.js");
@@ -3163,7 +3157,7 @@ var validateI18n = async function validateI18n() {
  */
 
 var getLocalesFull = function getLocalesFull() {
-  var locales = JSON.parse("[[\"zh\",{},\"E:\\\\Projects\\\\koot\\\\koot-clinic\\\\src\\\\locales\\\\zh.json\",\"./locales/zh.json\"]]");
+  var locales = JSON.parse("[[\"zh\",{},\"/Users/dream/Desktop/liebao/koot-clinic/src/locales/zh.json\",\"./locales/zh.json\"]]");
   return locales.map(function (l) {
     return [l[0], fs.readJsonSync( false ? undefined : path.resolve(_utils_get_dist_path__WEBPACK_IMPORTED_MODULE_2___default()(), 'server', l[3]), 'utf-8'), l[2], l[3]];
   }); // return JSON.parse(process.env.KOOT_I18N_LOCALES);
@@ -3196,7 +3190,7 @@ __webpack_require__.r(__webpack_exports__);
 var validateTemplate = async function validateTemplate(template) {
   if (false) {}
 
-  if (true) template = "<!DOCTYPE html>\r\n<html>\r\n\r\n<head<%- inject.htmlLang %>>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no\">\r\n\r\n    <title><%= inject.title %></title>\r\n\r\n    <base target=\"_self\">\r\n\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n    <meta name=\"format-detection\" content=\"telephone=no,email=no,address=no\">\r\n    <meta name=\"format-detection\" content=\"email=no\">\r\n    <meta name=\"format-detection\" content=\"address=no\">\r\n    <meta name=\"format-detection\" content=\"telephone=no\">\r\n    <meta name=\"HandheldFriendly\" content=\"true\">\r\n    <meta name=\"mobile-web-app-capable\" content=\"yes\">\r\n\r\n    <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\r\n\r\n    <!-- IE/Edge/Multi-engine -->\r\n    <meta name=\"renderer\" content=\"webkit\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\r\n\r\n    <!-- iOS Safari -->\r\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\r\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">\r\n\r\n    <!-- Customize -->\r\n    <meta name=\"theme-color\" content=\"#0092f5\" />\r\n\r\n    <%- inject.metas %>\r\n    <%- inject.styles %>\r\n</head>\r\n\r\n<body class=\"koot-system\">\r\n    <%- inject.svgIconPack %>\r\n    <%- inject.resultLoading %>\r\n    <div id=\"root\"><%- inject.react %></div>\r\n    <script type=\"text/javascript\"><%- content('critical.js') %></script>\r\n    <%- inject.scripts %>\r\n</body>\r\n\r\n</html>\r\n\r\n<%- inject.performanceInfos %>\r\n\n<!-- rendered by using koot.js 0.12.0-alpha.26 -->";
+  if (true) template = "<!DOCTYPE html>\n<html>\n\n<head<%- inject.htmlLang %>>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no\">\n\n    <title><%= inject.title %></title>\n\n    <base target=\"_self\">\n\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <meta name=\"format-detection\" content=\"telephone=no,email=no,address=no\">\n    <meta name=\"format-detection\" content=\"email=no\">\n    <meta name=\"format-detection\" content=\"address=no\">\n    <meta name=\"format-detection\" content=\"telephone=no\">\n    <meta name=\"HandheldFriendly\" content=\"true\">\n    <meta name=\"mobile-web-app-capable\" content=\"yes\">\n\n    <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n\n    <!-- IE/Edge/Multi-engine -->\n    <meta name=\"renderer\" content=\"webkit\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n\n    <!-- iOS Safari -->\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">\n\n    <!-- Customize -->\n    <meta name=\"theme-color\" content=\"#0092f5\" />\n\n    <%- inject.metas %>\n    <%- inject.styles %>\n</head>\n\n<body class=\"koot-system\">\n    <%- inject.svgIconPack %>\n    <%- inject.resultLoading %>\n    <div id=\"root\"><%- inject.react %></div>\n    <script type=\"text/javascript\"><%- content('critical.js') %></script>\n    <%- inject.scripts %>\n</body>\n\n</html>\n\n<%- inject.performanceInfos %>\n\n<!-- rendered by using koot.js 0.12.0-alpha.23 -->";
   if (typeof template !== 'string') throw new Error(_libs_error_msg__WEBPACK_IMPORTED_MODULE_0___default()('VALIDATE_TEMPLATE', '`config.template` should be Pathname or EJS String')); // if (template.substr(0, 2) === './') {
   //     // template = require(`raw-loader?` + path.resolve(
   //     //     getCwd(), template
@@ -3378,7 +3372,7 @@ var locales;
 module.exports = function () {
   if (!Array.isArray(locales)) {
     if (isI18nEnabled()) {
-      locales = JSON.parse("[[\"zh\",{},\"E:\\\\Projects\\\\koot\\\\koot-clinic\\\\src\\\\locales\\\\zh.json\",\"./locales/zh.json\"]]") || [];
+      locales = JSON.parse("[[\"zh\",{},\"/Users/dream/Desktop/liebao/koot-clinic/src/locales/zh.json\",\"./locales/zh.json\"]]") || [];
     } else {
       locales = [];
     }
@@ -3856,7 +3850,7 @@ module.exports = function (localeId, ctx) {
 /*!************************************!*\
   !*** ./node_modules/koot/index.js ***!
   \************************************/
-/*! exports provided: createStore, reduxForCreateStore, extend, getLocaleId, resetLocaleId, localeId, getStore, resetStore, store, getHistory, resetHistory, history, getCache, getCtx */
+/*! exports provided: createStore, reduxForCreateStore, extend, getLocaleId, resetLocaleId, localeId, getStore, resetStore, store, getHistory, resetHistory, history, getCache */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3873,7 +3867,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetHistory", function() { return resetHistory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "history", function() { return history; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCache", function() { return getCache; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCtx", function() { return getCtx; });
 /* harmony import */ var _React_is_render_safe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./React/is-render-safe */ "./node_modules/koot/React/is-render-safe.js");
 /* harmony import */ var _React_is_render_safe__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_React_is_render_safe__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _React_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./React/redux */ "./node_modules/koot/React/redux.js");
@@ -3891,7 +3884,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
     __KOOT_STORE__: false,
     __KOOT_HISTORY__: false,
     __KOOT_LOCALEID__: false,
-    __KOOT_CTX__: false,
 */
  // ============================================================================
 
@@ -3974,13 +3966,6 @@ var getCache = function getCache(localeId) {
     if (localeId) return cache.get(localeId) || {};
     return cache.get('__');
   }
-}; // ============================================================================
-
-var getCtx = function getCtx() {
-  if (false) {}
-  if (false) {}
-  if (typeof __KOOT_CTX__ === 'undefined') return undefined;
-  return __KOOT_CTX__;
 }; // ============================================================================
 
 if (false) {}
@@ -4153,7 +4138,7 @@ module.exports = function (dist, bundleVersionsKeep) {
       //     base,
       //     'process.env.KOOT_CLIENT_BUNDLE_SUBFOLDER': process.env.KOOT_CLIENT_BUNDLE_SUBFOLDER
       // })
-      result = path.resolve(base, "koot-1577174854262");
+      result = path.resolve(base, "koot-1577185493674");
     } else {}
   }
 
@@ -4639,7 +4624,7 @@ var getChunkmap = function getChunkmap(localeId) {
     if (_typeof(global.chunkmap) === 'object') chunkmap = global.chunkmap;
 
     try {
-      chunkmap = JSON.parse("{\".zh\":{\".public\":\"public/koot-1577174854262/\",\".entrypoints\":{\"commons\":[\"public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js\",\"public/koot-1577174854262/includes/entry.ef0af55962bd213c6cf1.js\"],\"critical\":[\"public/koot-1577174854262/includes/extract.5.90419169072f558e10f3.css\",\"public/koot-1577174854262/includes/entry.90419169072f558e10f3.js\"],\"client\":[\"public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js\",\"public/koot-1577174854262/includes/entry.56ba8badc99c27fb0551.js\"],\"__KOOT__CLIENT__RUN__FIRST__\":[\"public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js\",\"public/koot-1577174854262/includes/entry.79addfbd70cc0043ecf2.js\"]},\".files\":{\"koot-clinic.js\":\"public/koot-1577174854262/includes/chunk.4ccc435b6e1fa8e53e03.js\",\"PageResult.js\":\"public/koot-1577174854262/includes/chunk.d7b19b36cfafc6c2a453.js\",\"__KOOT__CLIENT__RUN__FIRST__.js\":\"public/koot-1577174854262/includes/entry.79addfbd70cc0043ecf2.js\",\"client.js\":\"public/koot-1577174854262/includes/entry.56ba8badc99c27fb0551.js\",\"commons.js\":\"public/koot-1577174854262/includes/entry.ef0af55962bd213c6cf1.js\",\"critical.css\":\"public/koot-1577174854262/includes/extract.5.90419169072f558e10f3.css\",\"critical.js\":\"public/koot-1577174854262/includes/entry.90419169072f558e10f3.js\",\"vendors~PageResult.js\":\"public/koot-1577174854262/includes/chunk.6aa0e83178e8bdd133ce.js\",\"__KOOT__EXTRACT__CSS__.css\":\"public/koot-1577174854262/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css\"},\"service-worker\":[\"public/koot-1577174854262/service-worker.zh.js\"]}}");
+      chunkmap = JSON.parse("{\".zh\":{\".public\":\"public/koot-1577185493674/\",\".entrypoints\":{\"commons\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js\"],\"critical\":[\"public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css\",\"public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js\"],\"client\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js\"],\"__KOOT__CLIENT__RUN__FIRST__\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.56b255076d99b8101781.js\"]},\".files\":{\"koot-clinic.js\":\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"PageResult.js\":\"public/koot-1577185493674/includes/chunk.7866a40a63132c803250.js\",\"__KOOT__CLIENT__RUN__FIRST__.js\":\"public/koot-1577185493674/includes/entry.56b255076d99b8101781.js\",\"client.js\":\"public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js\",\"commons.js\":\"public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js\",\"critical.css\":\"public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css\",\"critical.js\":\"public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js\",\"vendors~PageResult.js\":\"public/koot-1577185493674/includes/chunk.8c0f7e7742819a6d8074.js\",\"__KOOT__EXTRACT__CSS__.css\":\"public/koot-1577185493674/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css\"},\"service-worker\":[\"public/koot-1577185493674/service-worker.zh.js\"]}}");
     } catch (e) {
       chunkmap = false;
     }
@@ -4710,16 +4695,16 @@ module.exports = function () {
     p = typeof global.KOOT_DIST_DIR === 'string' ? global.KOOT_DIST_DIR : function () {
       var cwd = getCwd();
       var parent = path.resolve(cwd, '..');
-      var result = path.resolve(cwd, "dist\\dist-ssr-server");
+      var result = path.resolve(cwd, "dist/dist-ssr-server");
 
       while (!fs.existsSync(result) && cwd !== parent) {
         cwd = parent;
         parent = path.resolve(cwd, '..');
-        result = path.resolve(cwd, "dist\\dist-ssr-server");
+        result = path.resolve(cwd, "dist/dist-ssr-server");
       }
 
       if (fs.existsSync(result)) return result;
-      return path.resolve(cwd, "dist\\dist-ssr-server");
+      return path.resolve(cwd, "dist/dist-ssr-server");
     }();
   }
 
@@ -9814,7 +9799,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Projects\koot\koot-clinic\node_modules\koot\ReactApp\server */"./node_modules/koot/ReactApp/server/index.js");
+module.exports = __webpack_require__(/*! /Users/dream/Desktop/liebao/koot-clinic/node_modules/koot/ReactApp/server */"./node_modules/koot/ReactApp/server/index.js");
 
 
 /***/ }),
