@@ -3,7 +3,7 @@ import { Result as PSIResult, Audit as PSIAudit } from 'koot-diagnose/psi';
 import React, { useRef } from 'react';
 import { extend } from 'koot';
 
-import scrollTo from '@utils/client/scroll-to';
+import doScrollTo from '@utils/client/scroll-to';
 
 import Empty from '../empty';
 import Switch from './switch';
@@ -20,17 +20,17 @@ let SwitchContainerRef: React.RefObject<HTMLDivElement>;
 export const BodyRefs: {
     [typeName: string]: React.RefObject<HTMLDivElement>;
 } = {};
-export const scrollToCategory = (category: string): void => {
+export const scrollTo = (el: HTMLElement): void => {
+    if (!el) return;
+
     const containerEl = ContainerRef.current;
     if (!containerEl) return;
-    const bodyEl = BodyRefs[category].current;
-    if (!bodyEl) return;
     const headerEl = HeaderRef.current;
     if (!headerEl) return;
     const switchContainerEl = SwitchContainerRef.current;
     if (!switchContainerEl) return;
 
-    const rect = bodyEl.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
     const toY =
         rect.top +
         window.pageYOffset -
@@ -38,8 +38,15 @@ export const scrollToCategory = (category: string): void => {
             switchContainerEl.offsetHeight +
             headerEl.offsetHeight +
             parseInt(getComputedStyle(headerEl).top || '0') +
-            parseInt(getComputedStyle(bodyEl).marginTop || '0'));
-    scrollTo(toY);
+            parseInt(getComputedStyle(el).marginTop || '0'));
+
+    doScrollTo(toY);
+};
+export const scrollToCategory = (category: string): void => {
+    const bodyEl = BodyRefs[category].current;
+    if (!bodyEl) return;
+
+    scrollTo(bodyEl);
 };
 export const getGradeFromScore = (score: number | string): string => {
     if (typeof score === 'number') {
@@ -91,7 +98,7 @@ const Psi = extend<ComponentProps>({
             const { categories = {} } = lighthouseResult;
 
             const allCategories = [
-                'loadingExperience',
+                // 'loadingExperience',
                 ...Object.keys(categories)
             ];
             // const [currentType, switchType] = useState(allCategories[0]);
@@ -136,6 +143,7 @@ const Psi = extend<ComponentProps>({
                                 }
                             />
                         ))}
+                        <Category category="OTHER_INFO" />
                     </div>
                 </div>
             );

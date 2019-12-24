@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-12-24 11:18:24
+ * @LastEditTime: 2019-12-24 11:21:27
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /liebao/koot-clinic/src/store/modules/result.js
+ */
 import { FETCH_RESULT } from '@constants/actions';
 import { get as getResult } from '@api/result';
 
@@ -28,9 +36,9 @@ export default {
             if (typeof state[id] === 'object')
                 return new Promise(resolve => resolve(state[id]));
 
-            return getResult(id).then(result =>
-                commit(reducerUpdateById, { result, id })
-            );
+            return getResult(id)
+                .then(result => commit(reducerUpdateById, { result, id }))
+                .then(r => r.payload.result);
         }
     },
     modules: {}

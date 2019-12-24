@@ -68,6 +68,7 @@
             background: @theme-grey-700;
             color: #fff;
             border-radius: 50%;
+            font-size: 20px;
             .transition(opacity);
             &[data-score='FAST'],
             &[data-score='GOOD'] {
@@ -83,6 +84,7 @@
             &.is-number {
                 background: transparent;
                 color: var(--root-content-color);
+                &::before,
                 &::after {
                     content: '';
                     position: absolute;
@@ -90,9 +92,43 @@
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    z-index: -1;
                     border-radius: 50%;
-                    border: 4px solid var(--root-content-color-lighter);
+                }
+                &::before {
+                    z-index: -1;
+                    border: 4px solid currentColor;
+                }
+                &::after {
+                    z-index: -2;
+                    background: var(--root-background-color-lighter);
+                    opacity: 0.35;
+                }
+                &[data-grade='good'] {
+                    color: var(--root-grade-good-color-deeper);
+                    &::before {
+                        border-color: var(--root-grade-good-color);
+                    }
+                    &::after {
+                        background: var(--root-grade-good-color);
+                    }
+                }
+                &[data-grade='average'] {
+                    color: var(--root-grade-average-color-deeper);
+                    &::before {
+                        border-color: var(--root-grade-average-color);
+                    }
+                    &::after {
+                        background: var(--root-grade-average-color);
+                    }
+                }
+                &[data-grade='bad'] {
+                    color: var(--root-grade-bad-color-deeper);
+                    &::before {
+                        border-color: var(--root-grade-bad-color);
+                    }
+                    &::after {
+                        background: var(--root-grade-bad-color);
+                    }
                 }
             }
         }
@@ -135,6 +171,9 @@
     }
     &[data-grade='bad'] {
         border-top-color: var(--root-grade-bad-color);
+    }
+    &[data-category='OTHER_INFO'] {
+        background: var(--root-background-color);
     }
     a {
         .link-color-inherit();

@@ -188,7 +188,6 @@ const queue = new Queue(async d => {
     // 判断目标地址是否已被诊断过 =================================================
     const queryUrl = `select * from clinic where url='${url}' order by createTime desc`;
     const readResult = await read(queryUrl);
-
     let { createTime } = readResult.length > 0 ? readResult[0] : {};
 
     const currentTime = new Date().getTime();

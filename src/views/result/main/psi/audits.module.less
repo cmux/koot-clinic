@@ -9,7 +9,7 @@
     }
     & > .audits {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
         grid-gap: 0 @gutter;
         // margin-top: @gutter;
         .styles-phone() {
@@ -17,6 +17,9 @@
         }
         .screen-phone(.styles-phone());
     }
+    // &[data-group='metrics'] > .audits {
+    //     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    // }
 }
 
 .component-audit {
@@ -25,9 +28,10 @@
     @title-line-height: 22px;
 
     position: relative;
-    margin: -1px 0 0 0;
+    // margin: -1px 0 0 0;
+    margin: 0;
     border-top: 1px solid var(--root-border-color);
-    border-bottom: 1px solid var(--root-border-color);
+    // border-bottom: 1px solid var(--root-border-color);
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: (@indicator-size * 2 + @indicator-margin);
@@ -51,6 +55,7 @@
     & > .title {
         display: flex;
         flex-flow: row nowrap;
+        align-items: flex-start;
         .styles-phone() {
             padding-left: (@indicator-size * 2 + @indicator-margin);
         }
@@ -123,9 +128,20 @@
         margin-bottom: 30px;
         border: 1px solid var(--root-border-color);
         border-radius: 5px;
-        overflow: hidden;
+        overflow: auto;
+        // overscroll-behavior-y: contain;
+        max-height: calc(100vh - @tab-height - @gutter * 8);
         color: var(--root-content-color);
-        background: var(--root-background-color-deeper);
+        background: var(--root-background-color);
+        .styles-phone() {
+            max-height: calc(100vh - @tab-height - @gutter * 6);
+        }
+        .screen-phone(.styles-phone());
+        &.mod-unrecognized-details-type {
+            background: var(--root-error-color);
+            color: var(--root-background-color);
+            padding: 8px 10px;
+        }
         .details-table {
             width: 100%;
             border-spacing: 0;
@@ -140,7 +156,9 @@
                     text-align: right;
                     width: 6em;
                 }
-                &[data-type='url'] {
+                &[data-type='url'],
+                &[data-type='code'] {
+                    min-width: 6em;
                     .force-word-break();
                 }
                 &[data-type='thumbnail'] {

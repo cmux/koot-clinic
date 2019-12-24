@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { scrollToCategory } from './';
+import { scrollToCategory, getGradeFromScore } from './';
 
 // ============================================================================
 
@@ -23,6 +23,7 @@ class Switch extends React.PureComponent<SwitchProps> {
     }
     render(): React.ReactNode {
         const isScoreNumber = typeof this.props.score === 'number';
+        const grade = getGradeFromScore(this.props.score);
         return (
             <button className="switch" onClick={this.onClick}>
                 <span
@@ -33,6 +34,7 @@ class Switch extends React.PureComponent<SwitchProps> {
                         }
                     ])}
                     data-score={this.props.score}
+                    data-grade={grade}
                 >
                     {isScoreNumber
                         ? (this.props.score as number) * 100

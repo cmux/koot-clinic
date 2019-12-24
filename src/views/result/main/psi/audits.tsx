@@ -9,7 +9,7 @@ import prettyMs from 'pretty-ms';
 import Markdown from '@components/markdown';
 import Icon from '@components/icon';
 
-import { AuditGroup, AuditGroupItem, getGradeFromScore } from './';
+import { AuditGroup, AuditGroupItem, getGradeFromScore, scrollTo } from './';
 import styles, { wrapper as classNameModule } from './audits.module.less';
 
 // ============================================================================
@@ -27,7 +27,11 @@ const Audits = extend<AuditsProps>({
             const ContainerRef: React.RefObject<HTMLDivElement> = useRef(null);
 
             return (
-                <div className={className} ref={ContainerRef}>
+                <div
+                    className={className}
+                    ref={ContainerRef}
+                    data-group={group.group}
+                >
                     {title && <h4 className="title">{title}</h4>}
                     <div className="audits">
                         {audits.map(audit => (
@@ -56,6 +60,8 @@ class Audit extends React.PureComponent<AuditProps, AuditState> {
     hasWarnings: boolean;
     detailsType?: 'table' | 'opportunity-table' | 'unknown';
 
+    DetailsToggleRef: React.RefObject<HTMLButtonElement> = React.createRef();
+
     constructor(props: AuditProps) {
         super(props);
         this.state = {
@@ -83,19 +89,25 @@ class Audit extends React.PureComponent<AuditProps, AuditState> {
             if (unrecognized.length) {
                 console.warn(this.props.audit, ...unrecognized);
             }
-            if (this.detailsType) {
-                console.log(this.props.audit, this.detailsType);
-            }
+            // if (this.detailsType) {
+            //     console.log(this.props.audit, this.detailsType);
+            // }
         }
 
         this.toggleDetails = this.toggleDetails.bind(this);
     }
 
     toggleDetails(evt: React.SyntheticEvent<HTMLButtonElement>): void {
-        this.setState(prevState => ({
-            showDetails: !prevState.showDetails
-        }));
         evt.currentTarget.blur();
+        this.setState(
+            prevState => ({
+                showDetails: !prevState.showDetails
+            }),
+            () => {
+                if (this.state.showDetails && this.DetailsToggleRef.current)
+                    scrollTo(this.DetailsToggleRef.current);
+            }
+        );
     }
 
     render(): React.ReactNode {
@@ -122,7 +134,7 @@ class Audit extends React.PureComponent<AuditProps, AuditState> {
                 {description && (
                     <Markdown className="description" source={description} />
                 )}
-                {this.hasDetails && this.detailsType !== 'unknown' && (
+                {this.hasDetails && (
                     <button
                         className={classNames([
                             'toggle-details',
@@ -132,6 +144,7 @@ class Audit extends React.PureComponent<AuditProps, AuditState> {
                         ])}
                         type="button"
                         onClick={this.toggleDetails}
+                        ref={this.DetailsToggleRef}
                     >
                         <Icon icon="arrow-right3" className="icon" />
                         {this.state.showDetails
@@ -140,12 +153,33 @@ class Audit extends React.PureComponent<AuditProps, AuditState> {
                     </button>
                 )}
                 {this.state.showDetails && (
-                    <div className="details">
+                    <div
+                        className={classNames([
+                            'details',
+                            {
+                                'mod-unrecognized-details-type':
+                                    this.detailsType === 'unknown'
+                            }
+                        ])}
+                    >
                         {this.detailsType === 'table' ||
                         this.detailsType === 'opportunity-table' ? (
                             <DetailsTable details={details} />
                         ) : (
-                            this.detailsType
+                            <React.Fragment>
+                                {__(
+                                    'views.result.psi.details_unkown_type',
+                                    '0',
+                                    {
+                                        type: details.type || ''
+                                    }
+                                )}
+                                <br />
+                                {__(
+                                    'views.result.psi.details_unkown_type',
+                                    '1'
+                                )}
+                            </React.Fragment>
                         )}
                     </div>
                 )}
@@ -252,6 +286,7 @@ const DetailsTable = ({ details }: DetailsTableProps): JSX.Element | null => {
                                                     <img
                                                         src={content}
                                                         alt={content}
+                                                        loading="lazy"
                                                     />
                                                 </td>
                                             );

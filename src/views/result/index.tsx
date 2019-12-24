@@ -43,11 +43,10 @@ const dispatchFetchResult = (
         id
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
     }).then((r: any) => {
-        const origin =
-            typeof r.payload === 'object' ? r.payload.result.url : r.url;
+        const origin = r.url;
         if (!origin) return;
         return dispatch(FETCH_HISTORY, {
-            origin: origin
+            origin
         });
     });
 };

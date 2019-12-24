@@ -13,27 +13,45 @@ import { wrapper as classNameModule } from './index.module.less';
 interface BodyProps {
     category: string;
     className?: string;
-    result: PSIResult;
-    score: string | number;
+    result?: PSIResult;
+    score?: string | number;
 }
 const Body = React.memo(
-    ({ result, category, score }: BodyProps): JSX.Element => {
+    ({ result, category, score }: BodyProps): JSX.Element | null => {
+        const props = {
+            className: `${classNameModule}-category`,
+            'data-category': category
+        };
+        if (category === 'OTHER_INFO') {
+            return (
+                <div {...props}>
+                    <Markdown
+                        className="infos"
+                        source={__('views.result.psi.markdown_ending_msg')}
+                    />
+                </div>
+            );
+        }
+
         BodyRefs[category] = useRef(null);
-        const grade = getGradeFromScore(score);
+        const grade = getGradeFromScore(score || 0);
+
+        Object.assign(props, {
+            ref: BodyRefs[category],
+            'data-grade': grade
+        });
 
         if (category === 'loadingExperience') {
             return (
-                <div
-                    className={`${classNameModule}-category`}
-                    ref={BodyRefs[category]}
-                    data-grade={grade}
-                >
+                <div {...props}>
                     <h3 className="title">
                         {__('views.result.psi.loadingExperience')}
                     </h3>
                 </div>
             );
         }
+
+        if (!result) return null;
 
         const { lighthouseResult } = result;
         const { audits, categories, categoryGroups } = lighthouseResult;
@@ -53,7 +71,8 @@ const Body = React.memo(
             const thisAudit = audits[id];
 
             if (
-                (typeof thisAudit.score === 'number' &&
+                (group !== 'metrics' &&
+                    typeof thisAudit.score === 'number' &&
                     thisAudit.score > 0.9) ||
                 thisAudit.scoreDisplayMode === 'notApplicable' ||
                 thisAudit.scoreDisplayMode === 'informative'
@@ -95,11 +114,7 @@ const Body = React.memo(
         }
 
         return (
-            <div
-                className={`${classNameModule}-category`}
-                ref={BodyRefs[category]}
-                data-grade={grade}
-            >
+            <div {...props}>
                 <h3 className="title">{title}</h3>
                 {description && (
                     <Markdown className="description" source={description} />

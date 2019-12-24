@@ -72,7 +72,8 @@
                 "details_unkown_type": [
                     "未知类型 ${type}",
                     "请联系 Koot Clinic 开发人员"
-                ]
+                ],
+                "markdown_ending_msg": "以上信息仅为对首页的评分。\n\n如需针对其他页面进行评分，请访问 [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)。"
             },
             "no_error": "无错误",
             "no_psi": "暂无评分"
