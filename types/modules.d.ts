@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-12-24 11:18:24
+ * @LastEditTime: 2019-12-24 11:23:54
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /liebao/koot-clinic/types/modules.d.ts
+ */
 import { HTMLAttributes } from 'react';
 
 declare module 'redux' {
