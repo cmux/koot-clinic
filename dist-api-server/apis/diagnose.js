@@ -25,29 +25,6 @@ const queryNote = id => {
             return obj;
         }, {})
     );
-
-    // const queryArr = [];
-    // queryArr.push(
-    //     read(`select * from brokenRequest where everyQueryKey='${id}'`)
-    // );
-    // queryArr.push(
-    //     read(`select * from commonError where everyQueryKey='${id}'`)
-    // );
-    // queryArr.push(
-    //     read(`select * from consoleError where everyQueryKey='${id}'`)
-    // );
-    // queryArr.push(read(`select * from largeFile where everyQueryKey='${id}'`));
-    // queryArr.push(read(`select * from noGzip where everyQueryKey='${id}'`));
-
-    // return Promise.all(queryArr).then(data => {
-    //     return {
-    //         'broken request': data[0],
-    //         'console error': data[1],
-    //         'large file': data[2],
-    //         'no gzip': data[3],
-    //         'common error': data[4]
-    //     };
-    // });
 };
 
 const queryPsi = queryKey => {

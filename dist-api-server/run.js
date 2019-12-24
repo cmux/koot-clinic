@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-12-23 11:15:41
+ * @LastEditTime : 2019-12-23 15:16:11
+ * @LastEditors  : Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /liebao/koot-clinic/src-api-server/run.js
+ */
 /* eslint-disable no-console */
 
 const Koa = require('koa');
@@ -9,6 +17,8 @@ const task = require('./utils/task');
 // const views = require('koa-views');
 const render = require('koa-ejs');
 const path = require('path');
+const queue = require('./utils/diagnose');
+const {put}=require("./utils/db_connect")
 // ============================================================================
 
 /** 启动 API 服务器 */
@@ -28,6 +38,14 @@ const run = async () => {
 
     //自动任务启动
     task.start();
+    // 更新任务队列
+    try {
+        await put(`update queueList set status='0'`)
+    } catch (error) {
+    }
+    
+    // 未完成任务启动
+    queue.start()
 
     app.use(router.routes());
 

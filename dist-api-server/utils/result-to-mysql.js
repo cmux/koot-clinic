@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-12-13 11:30:31
+ * @LastEditTime : 2019-12-23 15:22:37
+ * @LastEditors  : Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /liebao/koot-clinic/src-api-server/utils/result-to-mysql.js
+ */
 /* eslint-disable no-console */
 const { add, ensureTable } = require('./db_connect');
 
@@ -14,11 +22,12 @@ const getVal = (keys, item) => {
         let value = item[cur];
         if (typeof value === 'string') {
             if (cur === 'url') {
-                value = `'${value.substr(0, 200).replace(/'/g, "\\'\\'")}'`;
+                value = `'${value.substr(0, 200).replace(/'/g, "＇")}'`;
             } else {
-                value = `'${value.replace(/'/g, "\\'\\'")}'`;
+                value = `'${value.replace(/'/g, "＇")}'`;
             }
         }
+
         return pre + value + ',';
     }, '');
 };

@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-11-07 16:47:39
+ * @LastEditTime: 2019-12-13 15:42:56
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /liebao/koot-clinic/src-api-server/utils/add-api.js
+ */
 const koaBody = require('koa-body');
 const router = require('../router');
 
@@ -31,7 +39,7 @@ const addAPI = (method, uri, func) => {
                 await func(ctx, next);
             } catch (e) {
                 ctx.status = 500;
-                ctx.body = e.message;
+                ctx.body = e ? e.message : '';
                 console.error(e);
             }
         }

@@ -1,3 +1,11 @@
+/*
+ * @Author:
+ * @Date: 2019-12-10 15:16:39
+ * @LastEditTime: 2019-12-13 12:41:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /liebao/koot-clinic/src-api-server/config.js
+ */
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -39,5 +47,9 @@ module.exports = {
     dirResults: path.resolve(__dirname, '.results'),
 
     /** 计划任务自动执行时间间隔 */
-    autoTaskTime: 7
+    autoTaskTime: 7,
+
+    /** 重新诊断时间间隔 */
+
+    revertTaskTime: 1
 };

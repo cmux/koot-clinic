@@ -64,6 +64,7 @@ const read = sql => {
 // 增加操作
 const add = sql => {
     return new Promise((resolve, reject) => {
+        console.log(sql);
         const error = new Error('add data error');
         query(sql)
             .then(data => {

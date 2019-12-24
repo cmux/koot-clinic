@@ -1,7 +1,20 @@
+/*
+ * @Author: chenyuanguang@cmcm.com
+ * @Date: 2019-11-08 16:47:28
+ * @LastEditTime : 2019-12-24 11:23:12
+ * @LastEditors  : Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /liebao/koot-clinic/src-api-server/utils/task.js
+ */
 const { read, add, put, remove, query } = require('../utils/db_connect');
 const { getDate } = require('./tools');
 const queue = require('./diagnose');
 const { autoTaskTime } = require('../config');
+/**
+ * @description: 找出应该重新诊断的队列
+ * @param {type}
+ * @return:
+ */
 
 const getQueue = async () => {
     const queryIds = await read(
@@ -56,7 +69,7 @@ const task = () => {
     };
     const start = () => {
         let curDay = null;
-
+        // 默认30分钟检查一次
         time = setInterval(() => {
             curDay = goList(curDay);
             console.log('===========auto task is testTime=============');

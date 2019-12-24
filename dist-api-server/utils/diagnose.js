@@ -5,14 +5,27 @@ const axios = require('axios');
 const crawler = require('koot-diagnose/crawler');
 const psi = require('koot-diagnose/psi');
 // const getDistPath = require('koot/utils/get-dist-path');
-const { url, autoTaskTime, page_speed_api_key } = require('../config');
+const {
+    url,
+    autoTaskTime,
+    revertTaskTime,
+    page_speed_api_key
+} = require('../config');
+
 const { parse, stringify } = require('flatted/cjs');
 const { save } = require('../utils/result-to-mysql');
 
 const { read, add } = require('./db_connect');
 const creatTime = require('./creatTime.js');
 const Unique = require('./Unique.js');
-
+const {
+    addQueueUrl,
+    getQueueByUrl,
+    updateQueueByUrl,
+    getQueueOne,
+    updateQueue,
+    removeQueue
+} = require('./queue-list');
 /** Clinic 站点的网址 */
 const siteUrl = url;
 
@@ -24,42 +37,30 @@ class Queue {
             this.funcQueue = funcQueue;
         }
     }
-
-    data = new Map();
-    queue = [];
     running = false;
 
-    add(url, email) {
-        //检测map中是否有当前url的数据，如果有，获取数据进行对象合并
-        const dataExist = this.get(url) || {};
+    async add(url, email) {
+        //检测队列中是否有当前url的数据，如果有，获取数据进行对象合并
+        const dataExist = await getQueueByUrl(url);
         const data = {
             emails: [],
-            ...dataExist,
+            ...(dataExist || {}),
             url
         };
+        
         //如果map数据结构中emials中无当前email，将当前email添加至data.emails，重新设置当前url在map中的值
         if (!data.emails.includes(email)) {
             data.emails.push(email);
-
-            this.data.set(url, data);
         }
+
         //如果队列中无当前url，将当前url添加到队列中
-        if (!this.queue.includes(url)) this.queue.push(url);
-    }
+        if (!dataExist) {
+            await addQueueUrl(data);
+        } else {
+            await updateQueueByUrl(url, data);
 
-    get(url) {
-        return this.data.get(url) || undefined;
-    }
-
-    /** 队列中第一个 URL 对应的数据 */
-    get first() {
-        return this.get(this.queue[0]);
-    }
-
-    remove(url) {
-        if (this.queue.includes(url))
-            this.queue.splice(this.queue.indexOf(url), 1);
-        this.data.delete(url);
+        }
+        return;
     }
 
     start() {
@@ -72,25 +73,30 @@ class Queue {
     }
 
     async doQueue() {
-        if (!this.queue.length) {
+        const queueItem = await getQueueOne();
+        // 如果有值且status为1，进行部署
+        if (queueItem && queueItem.status == 1) {
+            try {
+                await axios.get('http://localhost:8082/deployApiReal');
+            } catch (error) {
+                console.log(error);
+            }
+            console.log(`‼  Current start deploy`);
+        }
+        // 如果没有值，或者值的状态不为0，停止队列执行
+        if (!queueItem || queueItem.status != 0) {
+            console.log(`‼ Queue stop or NO QUEUE`);
             this.running = false;
             return true;
         }
 
-        console.log(`‼  Current items in queue: ${this.queue.length}`);
-
         if (typeof this.funcQueue === 'function') {
-            await this.funcQueue(this.first);
-            this.remove(this.queue[0]);
-
-            if (!this.queue.length) {
-                this.running = false;
-                console.log('NO QUEUE. IDLE');
-                return true;
-            }
-
+            console.log(`‼  Current items in queue: ${queueItem.url}`);
+            await removeQueue(queueItem.id);
+            await this.funcQueue(queueItem);
             await this.doQueue();
         } else {
+            console.log(`‼  funcQueue is not a function`);
             this.running = false;
             return true;
         }
@@ -117,6 +123,7 @@ const sendEmail = async (emails, url, everyQueryKey) => {
 
 /** 将 Email 地址存储到数据库中 */
 const saveEmail = async (emails, url, urlKey, everyQueryKey) => {
+    console.log("saveEmail:"+emails)
     //存储email
     for (const email of emails) {
         const addSql = `insert into clinic(id,urlKey,everyQueryKey,email,url,createTime) values('${Unique()}','${urlKey}','${everyQueryKey}','${email}','${url}','${creatTime()}')`;
@@ -181,7 +188,6 @@ const queue = new Queue(async d => {
     // 判断目标地址是否已被诊断过 =================================================
     const queryUrl = `select * from clinic where url='${url}' order by createTime desc`;
     const readResult = await read(queryUrl);
-    console.log(1000000, readResult);
     let { createTime } = readResult.length > 0 ? readResult[0] : {};
 
     const currentTime = new Date().getTime();
@@ -192,15 +198,16 @@ const queue = new Queue(async d => {
             : currentTime;
 
     const mistiming =
-        currentTime - createTime < 1000 * 60 * 60 * 24 * autoTaskTime;
+        currentTime - createTime < 1000 * 60 * 60 * 24 * revertTaskTime;
     // const mistiming = currentTime - createTime < 1000 * 60 ;
-
+    console.log(1110, mistiming);
     // 如果存在诊断记录且未过期 (计划任务未开始) ====================================
     if (readResult.length > 0 && mistiming) {
         console.log(
             `✔ Scheduled for target (${url}). No need to start diagnose. Sending email...`
         );
         const { urlKey, everyQueryKey } = readResult[0];
+        console.log("a:"+emails)
         await saveEmail(emails, url, urlKey, everyQueryKey);
         await sendEmail(emails, url, everyQueryKey).catch(e => {
             console.log(`✖ Sending email failed! See below for error details.`);
@@ -215,6 +222,7 @@ const queue = new Queue(async d => {
     /** 开始诊断流程 */
     const doDiagnose = async urlKey => {
         const everyQueryKey = Unique();
+        console.log("b:"+emails)
         await saveEmail(emails, url, urlKey, everyQueryKey);
 
         const errors = await crawlers(url);
