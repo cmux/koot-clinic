@@ -1,0 +1,27 @@
+@import '~vars.less';
+@import './_.less';
+
+.component {
+    position: relative;
+    min-height: 100vh;
+    padding: 0 0 0 @aside-width;
+    // background: @color-background-deeper;
+
+    .styles-tablet-only() {
+        padding-left: @aside-width-tablet;
+    }
+    .screen-tablet-only(.styles-tablet-only());
+
+    .styles-phone() {
+        padding-left: 0;
+    }
+    .screen-phone(.styles-phone());
+}
+
+.component-loading {
+    position: absolute;
+    top: 50vh;
+    line-height: 0;
+    width: 100%;
+    .info-text();
+}

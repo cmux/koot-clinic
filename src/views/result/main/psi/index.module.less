@@ -1,0 +1,142 @@
+@import '~vars.less';
+@import '../../_.less';
+
+.component {
+    position: relative;
+    // & > .wrapper {
+    //     padding: @gutter;
+    // }
+}
+
+// ============================================================================
+
+.component-switches {
+    @circle-size: 50px;
+    @text-height: 20px;
+    position: relative;
+    position: sticky;
+    top: @tab-height;
+    background: var(--root-background-color-deeper);
+    border-bottom: 1px solid var(--root-border-color);
+    z-index: 100;
+    padding: 0 @gutter;
+    box-shadow: 0 0 10px fade(black, 25%);
+    .styles-phone() {
+        padding: 0;
+        text-align: center;
+    }
+    .screen-phone(.styles-phone());
+    // margin-bottom: (0 - @gutter);
+    // backdrop-filter: @base-backdrop-filter;
+    // @supports (backdrop-filter: @base-backdrop-filter) {
+    //     background: fade(@color-background-deeper, 65%);
+    // }
+    // .styles-dark-theme() {
+    //     background: @dark-theme-color-background-deeper;
+    //     @supports (backdrop-filter: @base-backdrop-filter) {
+    //         background: fade(@dark-theme-color-background-deeper, 65%);
+    //     }
+    // }
+    // .dark-theme(.styles-dark-theme());
+    .switch {
+        width: 5em;
+        text-align: center;
+        position: relative;
+        padding: @circle-size 0 0 0;
+        border: 0;
+        border-top: 1em solid transparent;
+        border-bottom: 10px solid transparent;
+        margin: 0 1em 0 0;
+        line-height: @text-height;
+        display: inline-block;
+        background: none transparent;
+        color: var(--root-content-color-lighter);
+        cursor: pointer;
+        .transition(color);
+        .styles-phone() {
+            margin-right: 5px;
+        }
+        .screen-phone(.styles-phone());
+        .score {
+            position: absolute;
+            width: @circle-size;
+            height: @circle-size;
+            line-height: @circle-size;
+            top: 0;
+            left: 50%;
+            margin-left: (0 - @circle-size / 2);
+            background: @theme-grey-700;
+            color: #fff;
+            border-radius: 50%;
+            .transition(opacity);
+            &[data-score='FAST'],
+            &[data-score='GOOD'] {
+                background: @dark-theme-color-grade-good;
+            }
+            &[data-score='AVERAGE'] {
+                background: @dark-theme-color-grade-average;
+            }
+            &[data-score='SLOW'],
+            &[data-score='BAD'] {
+                background: @dark-theme-color-grade-bad;
+            }
+            &.is-number {
+                background: transparent;
+                color: var(--root-content-color);
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: -1;
+                    border-radius: 50%;
+                    border: 4px solid var(--root-content-color-lighter);
+                }
+            }
+        }
+        .title {
+            display: block;
+            margin-top: 10px;
+            .styles-phone() {
+                font-size: smaller;
+            }
+            .screen-phone(.styles-phone());
+        }
+        .styles-hover() {
+            color: var(--root-text-main-color);
+        }
+        .styles-active() {
+            color: var(--root-accent-color-active);
+            .score {
+                opacity: 0.6;
+            }
+        }
+        .is-hover(.styles-hover() ; .styles-active() ;);
+    }
+}
+
+// ============================================================================
+
+.component-category {
+    margin: 0 auto;
+    padding: @gutter;
+    border-top: 4px solid var(--root-border-color);
+    border-bottom: 1px solid var(--root-border-color);
+    & > .title {
+        color: var(--root-text-main-color);
+    }
+    &[data-grade='good'] {
+        border-top-color: var(--root-grade-good-color);
+    }
+    &[data-grade='average'] {
+        border-top-color: var(--root-grade-average-color);
+    }
+    &[data-grade='bad'] {
+        border-top-color: var(--root-grade-bad-color);
+    }
+    a {
+        .link-color-inherit();
+    }
+}

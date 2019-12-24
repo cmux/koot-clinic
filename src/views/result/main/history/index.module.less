@@ -1,0 +1,47 @@
+@import '~vars.less';
+@import '../../_.less';
+
+.component {
+    position: relative;
+    padding: @gutter;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: @gutter;
+
+    .item {
+        display: block;
+        border: 1px solid var(--root-border-color);
+        border-radius: 5px;
+        padding: 15px 20px;
+        .transition(~'border-color, background-color');
+        .diff,
+        .count {
+            display: block;
+            line-height: 1.2;
+        }
+        .diff {
+            color: var(--root-text-main-color);
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .count {
+            color: var(--root-content-color-lighter);
+            margin-top: 10px;
+        }
+        .styles-hover() {
+            background: var(--root-background-color-deeper);
+            border-color: var(--root-accent-color);
+        }
+        .styles-active() {
+            background: var(--root-background-color-lighter);
+            border-color: var(--root-accent-color);
+        }
+        .is-hover(.styles-hover() ; .styles-active() ;);
+
+        &.is-active {
+            pointer-events: none;
+            background: var(--root-background-color-deeper);
+            border-color: var(--root-accent-color);
+        }
+    }
+}

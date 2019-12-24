@@ -1,0 +1,105 @@
+.is-hover( @rules ) {
+    html.is-hover &:hover {
+        @rules();
+    }
+}
+
+.is-hover( @rulesHover ; @rulesActive ) {
+    html.is-hover &:hover {
+        @rulesHover();
+    }
+    &:active,
+    html.is-hover &:hover:active {
+        @rulesActive();
+    }
+}
+
+.is-active( @rulesActive ) {
+    &:active,
+    html.is-hover &:hover:active {
+        @rulesActive();
+    }
+}
+
+.is-dragging-file( @rules ) {
+    html.is-dragging-over & {
+        @rules();
+    }
+}
+
+// ============================================================================
+
+.dark-theme( @rules ) {
+    @media-query-dark-theme: ~'(prefers-color-scheme: dark)';
+    @media @media-query-dark-theme {
+        & {
+            @rules();
+        }
+    }
+}
+
+.background-pattern(@color: @color-home-cover-background) {
+    @color-texture-1: darken(@color, 5%);
+    @color-texture-2: @color;
+    background: radial-gradient(@color-texture-1 15%, transparent 16%) 0 0,
+        radial-gradient(@color-texture-1 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+    background-color: @color-texture-2;
+    background-size: 16px 16px;
+}
+
+.transition(...) {
+    transition-property: @arguments;
+}
+
+.placeholder(@styles) {
+    &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        @styles();
+    }
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        @styles();
+    }
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        @styles();
+    }
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        @styles();
+    }
+}
+
+.force-word-break() {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.link-color-inherit {
+    color: inherit;
+    text-decoration: underline;
+    .styles-hover() {
+        color: @color-accent-hover;
+        color: var(--root-accent-color-hover);
+    }
+    .styles-active() {
+        .styles-hover();
+        opacity: 0.5;
+    }
+    .is-hover(.styles-hover() ; .styles-active() ;);
+}

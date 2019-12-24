@@ -1,0 +1,88 @@
+{
+    "description": "专业诊疗机构",
+    "error_types": {
+        "no gzip": "没有 Gzip 的资源",
+        "common error": "普通错误",
+        "console error": "控制台报错",
+        "broken request": "无效的请求",
+        "large file": "大文件",
+        "psi": "首页评分"
+    },
+    "time_diff": {
+        "year_before": "${year}年前",
+        "years_before": "${year}年前",
+        "year_after": "${year}年后",
+        "years_after": "${year}年后",
+        "day_before": "${day}天前",
+        "days_before": "${day}天前",
+        "day_after": "${day}天后",
+        "days_after": "${day}天后",
+        "hour_before": "${hour}小时前",
+        "hours_before": "${hour}小时前",
+        "hour_after": "${hour}小时后",
+        "hours_after": "${hour}小时后",
+        "minute_before": "${minute}分钟前",
+        "minutes_before": "${minute}分钟前",
+        "minute_after": "${minute}分钟后",
+        "minutes_after": "${minute}分钟后",
+        "second_before": "${second}秒前",
+        "seconds_before": "${second}秒前",
+        "second_after": "${second}秒后",
+        "seconds_after": "${second}秒后",
+        "moment_ago": "刚刚"
+    },
+    "views": {
+        "submit": {
+            "labels": {
+                "url": "站点入口网址",
+                "email": "Email (用以接收分析结果)"
+            },
+            "buttons": {
+                "submit": "开始分析"
+            },
+            "submit_success": {
+                "title": "分析已开始",
+                "msg": "分析结果会在完成后发到您的邮箱中"
+            }
+        },
+        "result": {
+            "title": "诊断结果",
+            "table_columns": {
+                "url": "URL",
+                "message": "信息",
+                "pageUrl": "所属页面",
+                "contentLength": "文件大小"
+            },
+            "aside_options": {
+                "latest": "最新诊断",
+                "current": "当前诊断",
+                "history": "过往诊断"
+            },
+            "next_scheduled_in": "距离下次自动诊断开始还有",
+            "history_title": "${timediff}的诊断",
+            "history_item": {
+                "error_count": "${count} 个问题"
+            },
+            "psi": {
+                "loadingExperience": "加载体验",
+                "AVERAGE": "良",
+                "group_other": "其他",
+                "button_show_details": "显示详情...",
+                "button_hide_details": "隐藏详情",
+                "details_unkown_type": [
+                    "未知类型 ${type}",
+                    "请联系 Koot Clinic 开发人员"
+                ]
+            },
+            "no_error": "无错误",
+            "no_psi": "暂无评分"
+        },
+        "ts": {
+            "title": "TypeScript",
+            "description": "使用 TypeScript 编写 React 组件",
+            "msg": "该 React 组件使用 TypeScript 编写！",
+            "msgCheckFile": "可检阅、编辑该文件：`/src/views/ts-example/index.tsx`。",
+            "back": "返回到快速上手"
+        }
+    }
+}

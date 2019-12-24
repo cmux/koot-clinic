@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>koot-clinic部署新的版本</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: cornflowerblue;
+        }
+
+        div {
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+        }
+        h2{
+            margin:30px auto;
+        }
+        ul{
+            width: 400px;
+            list-style: none;
+           margin:50px auto 0;
+        }
+        li{
+            display: flex;
+            margin:10px auto;
+            width: 400px;
+            justify-items: center;
+            align-items: center;
+            line-height: 40px;
+        }
+        label{
+            width: 100px;
+            margin-right: 20px;
+        }
+        input{
+            border-radius: 20px;
+            padding:5px;
+            outline: none;
+            flex-grow: 1;
+        }
+        button{
+            width: 100%;
+            height: 50px;
+            background: cornflowerblue;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 20px;
+            border:none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>clinic-部署</h2>
+        <ul>
+            <li>
+                <label for="">输入发布密码</label>
+                <input type="text">
+            </li>
+            <li>
+                <button>发布</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+        function ajax(password){
+            let xhr=new XMLHttpRequest()
+            xhr.open("get","/api/deployapi?password="+password)
+            xhr.send()
+            xhr.onreadystatechange=()=>{
+                if(xhr.readyState==4&&xhr.status==200){
+                    const {code,msg}=JSON.parse(xhr.responseText)
+
+                    alert(msg)
+
+
+                }
+            }
+        }
+        
+        document.querySelector("button").onclick=()=>{
+            ajax(document.querySelector("input").value)
+        }
+       
+        
+    </script>
+</body>
+
+</html>
