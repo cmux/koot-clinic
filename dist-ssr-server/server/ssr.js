@@ -105,9 +105,9 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./logs/tmp/config/full.1577185493652.js":
+/***/ "./logs/tmp/config/full.1577242372177.js":
 /*!***********************************************!*\
-  !*** ./logs/tmp/config/full.1577185493652.js ***!
+  !*** ./logs/tmp/config/full.1577242372177.js ***!
   \***********************************************/
 /*! exports provided: name, type, template, router, redux, client, server */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -4427,7 +4427,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var history_lib_createMemoryHistory__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(history_lib_createMemoryHistory__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_router_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-redux */ "react-router-redux");
 /* harmony import */ var react_router_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_router_redux__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _KOOT_PROJECT_CONFIG_FULL_PATHNAME___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! __KOOT_PROJECT_CONFIG_FULL_PATHNAME__ */ "./logs/tmp/config/full.1577185493652.js");
+/* harmony import */ var _KOOT_PROJECT_CONFIG_FULL_PATHNAME___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! __KOOT_PROJECT_CONFIG_FULL_PATHNAME__ */ "./logs/tmp/config/full.1577242372177.js");
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../ */ "./node_modules/koot/index.js");
 /* harmony import */ var _root_isomorphic__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./root-isomorphic */ "./node_modules/koot/ReactApp/server/root-isomorphic.jsx");
 /* harmony import */ var _defaults_webpack_dev_server__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../defaults/webpack-dev-server */ "./node_modules/koot/defaults/webpack-dev-server.js");
@@ -6093,7 +6093,7 @@ module.exports = function (dist, bundleVersionsKeep) {
       //     base,
       //     'process.env.KOOT_CLIENT_BUNDLE_SUBFOLDER': process.env.KOOT_CLIENT_BUNDLE_SUBFOLDER
       // })
-      result = path.resolve(base, "koot-1577185493674");
+      result = path.resolve(base, "koot-1577242372207");
     } else {}
   }
 
@@ -6378,7 +6378,7 @@ var getChunkmap = function getChunkmap(localeId) {
     if (_typeof(global.chunkmap) === 'object') chunkmap = global.chunkmap;
 
     try {
-      chunkmap = JSON.parse("{\".zh\":{\".public\":\"public/koot-1577185493674/\",\".entrypoints\":{\"commons\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js\"],\"critical\":[\"public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css\",\"public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js\"],\"client\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js\"],\"__KOOT__CLIENT__RUN__FIRST__\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.56b255076d99b8101781.js\"]},\".files\":{\"koot-clinic.js\":\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"PageResult.js\":\"public/koot-1577185493674/includes/chunk.7866a40a63132c803250.js\",\"__KOOT__CLIENT__RUN__FIRST__.js\":\"public/koot-1577185493674/includes/entry.56b255076d99b8101781.js\",\"client.js\":\"public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js\",\"commons.js\":\"public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js\",\"critical.css\":\"public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css\",\"critical.js\":\"public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js\",\"vendors~PageResult.js\":\"public/koot-1577185493674/includes/chunk.8c0f7e7742819a6d8074.js\",\"__KOOT__EXTRACT__CSS__.css\":\"public/koot-1577185493674/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css\"},\"service-worker\":[\"public/koot-1577185493674/service-worker.zh.js\"]}}");
+      chunkmap = JSON.parse("{\".zh\":{\".public\":\"public/koot-1577242372207/\",\".entrypoints\":{\"commons\":[\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577242372207/includes/entry.f328fa745904bfa32745.js\"],\"critical\":[\"public/koot-1577242372207/includes/extract.5.9eb0110f38931bbeedf6.css\",\"public/koot-1577242372207/includes/entry.9eb0110f38931bbeedf6.js\"],\"client\":[\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577242372207/includes/entry.7facb70f30181afb9ba2.js\"],\"__KOOT__CLIENT__RUN__FIRST__\":[\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577242372207/includes/entry.56b255076d99b8101781.js\"]},\".files\":{\"koot-clinic.js\":\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"PageResult.js\":\"public/koot-1577242372207/includes/chunk.7866a40a63132c803250.js\",\"__KOOT__CLIENT__RUN__FIRST__.js\":\"public/koot-1577242372207/includes/entry.56b255076d99b8101781.js\",\"client.js\":\"public/koot-1577242372207/includes/entry.7facb70f30181afb9ba2.js\",\"commons.js\":\"public/koot-1577242372207/includes/entry.f328fa745904bfa32745.js\",\"critical.css\":\"public/koot-1577242372207/includes/extract.5.9eb0110f38931bbeedf6.css\",\"critical.js\":\"public/koot-1577242372207/includes/entry.9eb0110f38931bbeedf6.js\",\"vendors~PageResult.js\":\"public/koot-1577242372207/includes/chunk.8c0f7e7742819a6d8074.js\",\"__KOOT__EXTRACT__CSS__.css\":\"public/koot-1577242372207/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css\"},\"service-worker\":[\"public/koot-1577242372207/service-worker.zh.js\"]}}");
     } catch (e) {
       chunkmap = false;
     }
@@ -6449,7 +6449,7 @@ var getFilePath = function getFilePath(filename, localeId) {
   var isDev =  false ||  true && false; // const localeId = 'zh'
   // 如果标记为 pathname，直接返回结果
 
-  if (isPathname) return pathPublic + filename.replace(new RegExp('(^\\.\\/|^)public\\/' + ( true ? "".concat("koot-1577185493674", "\\/") : undefined)), '');
+  if (isPathname) return pathPublic + filename.replace(new RegExp('(^\\.\\/|^)public\\/' + ( true ? "".concat("koot-1577242372207", "\\/") : undefined)), '');
   var chunkmap = getChunkmap(localeId);
   var regPublicPath = chunkmap['.public'] ? new RegExp("(^\\.\\/|^)".concat(chunkmap['.public'])) : /(^\.\/|^)public\//;
   /**************************************************************************
@@ -16481,7 +16481,7 @@ var Form = function Form(_ref) {
     type: "email",
     autoComplete: "email",
     icon: "envelop2",
-    placeholder: "someone@web.sites",
+    placeholder: "someone@web.site",
     required: true
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit"

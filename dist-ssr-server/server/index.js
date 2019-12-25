@@ -86,9 +86,9 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./logs/tmp/config/portion.server.1577185493652.js":
+/***/ "./logs/tmp/config/portion.server.1577242372177.js":
 /*!*********************************************************!*\
-  !*** ./logs/tmp/config/portion.server.1577185493652.js ***!
+  !*** ./logs/tmp/config/portion.server.1577242372177.js ***!
   \*********************************************************/
 /*! exports provided: template, server */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2898,7 +2898,7 @@ module.exports = KootReactRenderCache;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! __KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME__ */ "./logs/tmp/config/portion.server.1577185493652.js");
+/* harmony import */ var _KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! __KOOT_PROJECT_CONFIG_PORTION_SERVER_PATHNAME__ */ "./logs/tmp/config/portion.server.1577242372177.js");
 /* harmony import */ var _utils_get_pathname_dev_server_start__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/get-pathname-dev-server-start */ "./node_modules/koot/utils/get-pathname-dev-server-start.js");
 /* harmony import */ var _utils_get_pathname_dev_server_start__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_utils_get_pathname_dev_server_start__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _libs_create_koa_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../libs/create-koa-app */ "./node_modules/koot/libs/create-koa-app.js");
@@ -4138,7 +4138,7 @@ module.exports = function (dist, bundleVersionsKeep) {
       //     base,
       //     'process.env.KOOT_CLIENT_BUNDLE_SUBFOLDER': process.env.KOOT_CLIENT_BUNDLE_SUBFOLDER
       // })
-      result = path.resolve(base, "koot-1577185493674");
+      result = path.resolve(base, "koot-1577242372207");
     } else {}
   }
 
@@ -4624,7 +4624,7 @@ var getChunkmap = function getChunkmap(localeId) {
     if (_typeof(global.chunkmap) === 'object') chunkmap = global.chunkmap;
 
     try {
-      chunkmap = JSON.parse("{\".zh\":{\".public\":\"public/koot-1577185493674/\",\".entrypoints\":{\"commons\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js\"],\"critical\":[\"public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css\",\"public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js\"],\"client\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js\"],\"__KOOT__CLIENT__RUN__FIRST__\":[\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577185493674/includes/entry.56b255076d99b8101781.js\"]},\".files\":{\"koot-clinic.js\":\"public/koot-1577185493674/includes/chunk.1b292c31853c22e5622c.js\",\"PageResult.js\":\"public/koot-1577185493674/includes/chunk.7866a40a63132c803250.js\",\"__KOOT__CLIENT__RUN__FIRST__.js\":\"public/koot-1577185493674/includes/entry.56b255076d99b8101781.js\",\"client.js\":\"public/koot-1577185493674/includes/entry.bdb764308f3be279432b.js\",\"commons.js\":\"public/koot-1577185493674/includes/entry.f328fa745904bfa32745.js\",\"critical.css\":\"public/koot-1577185493674/includes/extract.5.9eb0110f38931bbeedf6.css\",\"critical.js\":\"public/koot-1577185493674/includes/entry.9eb0110f38931bbeedf6.js\",\"vendors~PageResult.js\":\"public/koot-1577185493674/includes/chunk.8c0f7e7742819a6d8074.js\",\"__KOOT__EXTRACT__CSS__.css\":\"public/koot-1577185493674/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css\"},\"service-worker\":[\"public/koot-1577185493674/service-worker.zh.js\"]}}");
+      chunkmap = JSON.parse("{\".zh\":{\".public\":\"public/koot-1577242372207/\",\".entrypoints\":{\"commons\":[\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577242372207/includes/entry.f328fa745904bfa32745.js\"],\"critical\":[\"public/koot-1577242372207/includes/extract.5.9eb0110f38931bbeedf6.css\",\"public/koot-1577242372207/includes/entry.9eb0110f38931bbeedf6.js\"],\"client\":[\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577242372207/includes/entry.7facb70f30181afb9ba2.js\"],\"__KOOT__CLIENT__RUN__FIRST__\":[\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"public/koot-1577242372207/includes/entry.56b255076d99b8101781.js\"]},\".files\":{\"koot-clinic.js\":\"public/koot-1577242372207/includes/chunk.1b292c31853c22e5622c.js\",\"PageResult.js\":\"public/koot-1577242372207/includes/chunk.7866a40a63132c803250.js\",\"__KOOT__CLIENT__RUN__FIRST__.js\":\"public/koot-1577242372207/includes/entry.56b255076d99b8101781.js\",\"client.js\":\"public/koot-1577242372207/includes/entry.7facb70f30181afb9ba2.js\",\"commons.js\":\"public/koot-1577242372207/includes/entry.f328fa745904bfa32745.js\",\"critical.css\":\"public/koot-1577242372207/includes/extract.5.9eb0110f38931bbeedf6.css\",\"critical.js\":\"public/koot-1577242372207/includes/entry.9eb0110f38931bbeedf6.js\",\"vendors~PageResult.js\":\"public/koot-1577242372207/includes/chunk.8c0f7e7742819a6d8074.js\",\"__KOOT__EXTRACT__CSS__.css\":\"public/koot-1577242372207/includes/extract.all.e1e59a32ee0db39e793c44525afaafee.small.css\"},\"service-worker\":[\"public/koot-1577242372207/service-worker.zh.js\"]}}");
     } catch (e) {
       chunkmap = false;
     }
