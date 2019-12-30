@@ -39,10 +39,17 @@ const dispatchFetchResult = (
     id?: string
 ): Promise<void> => {
     if (!id) new Error('NO ID');
-    return dispatch(FETCH_RESULT, {
-        id
+    return dispatch<
+        {
+            id: string;
+        },
+        {
+            url: string;
+        }
+    >(FETCH_RESULT, {
+        id: id as string
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    }).then((r: any) => {
+    }).then(r => {
         const origin = r.url;
         if (!origin) return;
         return dispatch(FETCH_HISTORY, {
