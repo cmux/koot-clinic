@@ -45,7 +45,7 @@ const Form = ({ onSubmit }: FormProps): JSX.Element => (
                 type="email"
                 autoComplete="email"
                 icon="envelop2"
-                placeholder="someone@web.site"
+                placeholder="someone@web.sites"
                 required={true}
             ></Input>
         </div>
