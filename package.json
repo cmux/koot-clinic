@@ -36,7 +36,7 @@
         "koot": "^0.12.0-beta.4",
         "koot-diagnose": "^0.13.4",
         "koot-redux": "^1.0.19",
-        "marked": "^0.8.0",
+        "marked": "^4.0.10",
         "md5": "^2.2.1",
         "moment": "^2.24.0",
         "mysql": "^2.17.1",
