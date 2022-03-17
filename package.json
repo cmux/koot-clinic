@@ -65,7 +65,7 @@
         "prettier-eslint": "^9.0.0",
         "redux-devtools-extension": "^2.13.8",
         "redux-logger": "^3.0.6",
-        "simple-git": "^1.129.0",
+        "simple-git": "^3.3.0",
         "svg-url-loader": "^3.0.3",
         "url-loader": "^3.0.0"
     },
